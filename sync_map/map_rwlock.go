@@ -14,7 +14,7 @@ func NewSyncMap[T comparable, U any]() *SyncMap[T, U] {
 	}
 }
 
-// 写
+// Set 写
 func (sm *SyncMap[T, U]) Set(key T, val U) {
 	sm.rwLock.Lock()
 	defer sm.rwLock.Unlock()
